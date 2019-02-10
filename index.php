@@ -2,7 +2,7 @@
 <?php
    include 'requests_step_1.php';
    echo $guid;
-   echo $cookies["BIGipServerDigital-Customers_app~Digital-Customers_pool"];
+   
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
     </head>
     <body dir=rtl>
 
-        <form id="numbers-form" action="response_step_2.php" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+        <form id="numbers-form" action="requests_step_2.php" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
 
             <h1>
                 התחברות למערכת של - <br> מיטב דש בית השקעות
