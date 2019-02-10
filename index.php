@@ -1,7 +1,8 @@
 
 <?php
-   include 'guid_request_step_1.php';
-   echo $response_body;
+   include 'requests_step_1.php';
+   echo $guid;
+   echo $cookies["BIGipServerDigital-Customers_app~Digital-Customers_pool"];
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +30,7 @@
             <label for="phone">נא למלא את מספר הנייד</label><br />
             <input type="tel" name="phone" placeholder="*מספר טלפון" required="required"/>  
             
-            <input type="hidden" name="guid" value=<?php echo $response_body; ?> />
+            <input type="hidden" name="guid" value=<?php echo $guid; ?> />
             
             <br /><br />
 
