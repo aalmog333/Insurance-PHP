@@ -19,10 +19,10 @@ $cookies = array_merge($cookies_1, $cookies_2, $cookies_3, $cookies_4, $cookies_
 //dd();
 
 // get request
-function request_1() {
-
+function request_1()
+{
     global $User_Agent;
-    
+
     // URL to fetch
     $url = "https://customers.meitavdash.co.il/home/loginuser";
 
@@ -30,19 +30,20 @@ function request_1() {
 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     // get headers too with this line
-    curl_setopt($ch, CURLOPT_HEADER, true);
+    curl_setopt($ch, CURLOPT_HEADER, true);;
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Warning: This makes the request absolute insecure (only for testing) - see ref -> https://stackoverflow.com/questions/24611640/curl-60-ssl-certificate-unable-to-get-local-issuer-certificate
     curl_setopt($ch, CURLOPT_COOKIEJAR, dirname(__FILE__) . '/tmp/cookies.txt');
     //curl_setopt($ch, CURLOPT_COOKIEFILE, dirname(__FILE__) . '/tmp/cookies.txt');
     curl_setopt($ch, CURLOPT_USERAGENT, $User_Agent);
 
     $response = curl_exec($ch); // Performs the Request, with specified curl_setopt() options (if any).
-    curl_close($ch);
 
     if (curl_errno($ch)) { // check for execution errors
         echo 'Scraper error: ' . curl_error($ch);
         exit;
     }
+
+    curl_close($ch);
 
     $cookies = extract_cookies_from_header($response);
 
@@ -50,16 +51,16 @@ function request_1() {
 }
 
 // post request
-function request_2() {
-
+function request_2()
+{
     global $User_Agent;
-    
+
     // URL to fetch
     $url = "https://customers.meitavdash.co.il/Umbraco/surface/LoginOTP/EmployersOrAgents";
 
     $ch = curl_init($url);
 
-    curl_setopt($ch, CURLOPT_POST, TRUE);
+    curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     // get headers too with this line
     curl_setopt($ch, CURLOPT_HEADER, true);
@@ -69,12 +70,13 @@ function request_2() {
     curl_setopt($ch, CURLOPT_USERAGENT, $User_Agent);
 
     $response = curl_exec($ch); // Performs the Request, with specified curl_setopt() options (if any).
-    curl_close($ch);
 
     if (curl_errno($ch)) { // check for execution errors
         echo 'Scraper error: ' . curl_error($ch);
         exit;
     }
+
+    curl_close($ch);
 
     $cookies = extract_cookies_from_header($response);
 
@@ -82,10 +84,10 @@ function request_2() {
 }
 
 // post request // with variable
-function request_3() {
-
+function request_3()
+{
     global $User_Agent;
-    
+
     // URL to fetch
     $url = "https://customers.meitavdash.co.il/umbraco/surface/LoginOTPContent/GetOtpContent";
 
@@ -96,7 +98,7 @@ function request_3() {
 
     $ch = curl_init($url);
 
-    curl_setopt($ch, CURLOPT_POST, TRUE);
+    curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     // get headers too with this line
     curl_setopt($ch, CURLOPT_HEADER, true);
@@ -107,28 +109,29 @@ function request_3() {
     curl_setopt($ch, CURLOPT_USERAGENT, $User_Agent);
 
     $response = curl_exec($ch); // Performs the Request, with specified curl_setopt() options (if any).
-    curl_close($ch);
 
     if (curl_errno($ch)) { // check for execution errors
         echo 'Scraper error: ' . curl_error($ch);
         exit;
     }
 
+    curl_close($ch);
+
     $cookies = extract_cookies_from_header($response);
 
     return $cookies;
 }
 
-// post request 
-function request_4() {
-
+// post request
+function request_4()
+{
     global $User_Agent;
     // URL to fetch
     $url = "https://customers.meitavdash.co.il/Umbraco/surface/LoginOTP/isGemelInvest";
 
     $ch = curl_init($url);
 
-    curl_setopt($ch, CURLOPT_POST, TRUE);
+    curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     // get headers too with this line
     curl_setopt($ch, CURLOPT_HEADER, true);
@@ -138,12 +141,13 @@ function request_4() {
     curl_setopt($ch, CURLOPT_USERAGENT, $User_Agent);
 
     $response = curl_exec($ch); // Performs the Request, with specified curl_setopt() options (if any).
-    curl_close($ch);
 
     if (curl_errno($ch)) { // check for execution errors
         echo 'Scraper error: ' . curl_error($ch);
         exit;
     }
+
+    curl_close($ch);
 
     $cookies = extract_cookies_from_header($response);
 
@@ -151,10 +155,10 @@ function request_4() {
 }
 
 // get request
-function request_5() {
-
+function request_5()
+{
     global $User_Agent;
-    
+
     // URL to fetch
     $url = "https://customers.meitavdash.co.il/umbraco/surface/LoginOTPContent/GetMarketingSiteURL";
 
@@ -169,23 +173,24 @@ function request_5() {
     curl_setopt($ch, CURLOPT_USERAGENT, $User_Agent);
 
     $response = curl_exec($ch); // Performs the Request, with specified curl_setopt() options (if any).
-    curl_close($ch);
 
     if (curl_errno($ch)) { // check for execution errors
         echo 'Scraper error: ' . curl_error($ch);
         exit;
     }
 
+    curl_close($ch);
+
     $cookies = extract_cookies_from_header($response);
 
     return $cookies;
 }
 
-// post request // with variables 
-function request_6() {
-
+// post request // with variables
+function request_6()
+{
     global $User_Agent;
-    
+
     // URL to fetch
     $url = "https://customers.meitavdash.co.il/Umbraco/surface/LoginOTP/PageLoad";
 
@@ -208,12 +213,13 @@ function request_6() {
     curl_setopt($ch, CURLOPT_USERAGENT, $User_Agent);
 
     $response = curl_exec($ch); // Performs the Request, with specified curl_setopt() options (if any).
-    curl_close($ch);
 
     if (curl_errno($ch)) { // check for execution errors
         echo 'Scraper error: ' . curl_error($ch);
         exit;
     }
+
+    curl_close($ch);
 
     list($header, $body) = explode("\r\n\r\n", $response, 2);
 
@@ -223,8 +229,8 @@ function request_6() {
     return array($cookies, $guid);
 }
 
-function extract_cookies_from_header($header) {
-
+function extract_cookies_from_header($header)
+{
     preg_match_all('/^Set-Cookie:\s*([^;]*)/mi', $header, $matches);
     $cookies = array();
     foreach ($matches[1] as $item) {
