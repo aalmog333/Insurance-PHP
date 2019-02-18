@@ -1,3 +1,7 @@
+<?php
+   include 'request2.php';
+?>
+
 <!DOCTYPE html>
 <html>
 

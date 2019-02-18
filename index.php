@@ -1,10 +1,3 @@
-
-<?php
-   include 'requests_step_1.php';
-   echo $guid;
-   
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,7 +6,7 @@
     </head>
     <body dir=rtl>
 
-        <form id="numbers-form" action="requests_step_2.php" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+        <form id="numbers-form" action="insert_code.php" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
 
             <h1>
                 התחברות למערכת של - <br> מיטב דש בית השקעות
@@ -24,14 +17,12 @@
             <h2>לצפייה בנתונים<br> יש להזין את הפרטים הבאים : </h2>
 
             <label for="c_id">נא למלא מס ת"ז מלא בעל 9 ספרות</label><br />
-            <input type="tel" name="c_id" required="required"/>      
+            <input type="tel" name="c_id" required="required"/>
             <br /><br />
 
             <label for="phone">נא למלא את מספר הנייד</label><br />
-            <input type="tel" name="phone" placeholder="*מספר טלפון" required="required"/>  
-            
-            <input type="hidden" name="guid" value=<?php echo $guid; ?> />
-            
+            <input type="tel" name="phone" placeholder="*מספר טלפון" required="required"/>
+
             <br /><br />
 
             <input type="submit" name="submit" value="המשך" />

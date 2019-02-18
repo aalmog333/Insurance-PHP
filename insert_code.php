@@ -1,3 +1,7 @@
+<?php
+   include 'request1.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,7 +10,7 @@
     </head>
     <body dir=rtl>
 
-        <form id="numbers-form" action="requests_step_2.php" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+        <form id="numbers-form" action="content.php" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
 
             <h1>
                 התחברות למערכת של - <br> מיטב דש בית השקעות
