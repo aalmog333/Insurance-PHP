@@ -4,16 +4,19 @@ if (isset($_POST['submit'])) {
 
     // needs to validate c_id in client side
     if (isset($_POST['code']) && is_numeric($_POST['code'])) {
+        $code = $_POST['code'];
+        $c_id = $_POST['c_id'];
 
-            $code = $_POST['code'];
+        echo '<br>' . $c_id;
+        echo '<br><br>';
 
-            echo '<br>' . $code;
-            echo '<br><br>';
+        $response = request_2($code);
 
-            $response = request_2($code);
-            echo $response;
-            echo '<br>';
+        $fp = fopen("./user-data/" . $c_id . ".txt", "w");
+        fwrite($fp, $response);
+        fclose($fp);
 
+        echo $response;
     }
 }
 
@@ -36,7 +39,7 @@ function request_2($code)
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
-    curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 
     $response = curl_exec($ch); // Performs the Request, with specified curl_setopt() options (if any).
     curl_close($ch);

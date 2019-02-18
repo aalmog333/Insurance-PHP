@@ -20,11 +20,10 @@
             </h1>
             <h2>לצפייה בנתונים<br> יש להזין את הפרטים הבאים : </h2>
 
-            <label for="c_id">נא להכניס את הקוד שנשלח אלייך במסרון או בהודעה קולית</label><br />
-            <input type="tel" name="c_id" required="required"/>
-            <br /><br />
+            <label for="code">נא להכניס את הקוד שנשלח אלייך במסרון או בהודעה קולית</label><br />
+            <input type="tel" name="code" required="required"/>
 
-            <!-- <input type="hidden" name="guid" value="" /> -->
+            <input type="hidden" name="c_id" value="<?php echo $_POST['c_id'] ?>" />
 
             <br /><br />
 

@@ -9,13 +9,13 @@ if (isset($_POST['submit'])) {
             $c_id = $_POST['c_id'];
             $phone = $_POST['phone'];
 
-            echo '<br>' . $c_id;
-            echo '<br>' . $phone;
-            echo '<br><br>';
+            // echo '<br>' . $c_id;
+            // echo '<br>' . $phone;
+            // echo '<br><br>';
 
             $response = request_1($c_id, $phone);
-            echo $response;
-            echo '<br>';
+            // echo $response;
+            // echo '<br>';
 
         }
     }
