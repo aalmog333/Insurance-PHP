@@ -30,7 +30,7 @@ function request_1()
 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     // get headers too with this line
-    curl_setopt($ch, CURLOPT_HEADER, true);;
+    curl_setopt($ch, CURLOPT_HEADER, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Warning: This makes the request absolute insecure (only for testing) - see ref -> https://stackoverflow.com/questions/24611640/curl-60-ssl-certificate-unable-to-get-local-issuer-certificate
     curl_setopt($ch, CURLOPT_COOKIEJAR, dirname(__FILE__) . '/tmp/cookies.txt');
     //curl_setopt($ch, CURLOPT_COOKIEFILE, dirname(__FILE__) . '/tmp/cookies.txt');
